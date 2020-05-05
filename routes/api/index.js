@@ -3,10 +3,10 @@ const router = require("express").Router();
 const InfoRoutes = require("./info");
 const ManualRoutes = require("./manuals");
 
-// Book routes
+// Info routes
 router.use("/info", InfoRoutes);
 
-// Google Routes
+// Manual Routes
 router.use("/manuals", ManualRoutes);
 
 // For anything else, render the html page
