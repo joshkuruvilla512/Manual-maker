@@ -11,8 +11,11 @@ ExpressJS ?
 
 ### How it works
 
-Landing page that explains purpose and instructions
-Generate Manual page-- takes you through prompts about details of manual creation
+* Landing page that explains purpose and instructions
+* Generate Manual page-- takes you through prompts about details of manual creation
+* Finished Page-- contains PDF generated; provides link to save and to return to homepage.
+
+<img src="./readmeImages/Manual-Maker-Wireframe_optimized.png" width="100%">
 
 ### Authors
 Josh Kuruvilla, Crystal Ly, Brianna McCray
