@@ -1,4 +1,4 @@
-# Manual-maker
+# <img src="./readmeImages/Manual%20Maker%20Logo.png" width="9%"> Manual Maker  
 
 A pdf-creator for business purposes. 
 
