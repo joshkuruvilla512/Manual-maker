@@ -1,5 +1,5 @@
 {
-  "name": "ManualMaker",
+  "name": "manual-maker",
   "version": "1.0.0",
   "description": "A pdf-creator for business purposes.",
   "main": "index.js",
@@ -29,6 +29,7 @@
     "nodemon": "^2.0.3"
   },
   "dependencies": {
+    "@babel/core": "^7.9.6",
     "axios": "^0.19.2",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
