@@ -1,9 +1,7 @@
-const router = require("express").Router();
-const manualControllers = require("../../controllers/manualControllers");
+const db = require("../models");
+const axios = require("axios");
 
-// Matches with "/api/manuals"
-router
-  .route("/")
-  .get(manualControllers.findAll);
+module.exports = function (app) {
 
-module.exports = router;
+
+};

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const infoSchema = new Schema({
     title: {type: String, required: true },
     subtitle: { type: String },
-    description: { type: String, required: true },
+    description: { type: String },
     image: { type: String }
 })
 

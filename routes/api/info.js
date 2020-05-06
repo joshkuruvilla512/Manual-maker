@@ -1,16 +1,14 @@
-const router = require("express").Router();
-const infoController = require("../../controllers/infoController");
+const db = require("../../models");
+const axios = require("axios");
 
-// Matches with "/api/info"
-router.route("/")
-  .get(infoController.findAll)
-  .post(infoController.create);
+module.exports = function (app) {
 
-// Matches with "/api/info/:id"
-router
-  .route("/:id")
-  .get(infoController.findById)
-  .put(infoController.update)
-  .delete(infoController.remove);
 
-module.exports = router;
+  app.post("/api/info", async ({ body }, res) => {
+    // Create an empty workout object ready for exercises to get put into it
+    const request = await db.Info.create(body)
+    // Send the request back to the front end
+    res.send(request)
+  });
+
+};
