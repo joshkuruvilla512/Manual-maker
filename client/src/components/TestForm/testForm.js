@@ -8,10 +8,6 @@ import {
     Button
 } from "reactstrap";
 
-//not sure this is the way to go, but worth a shot. 
-//Wanted to get the logic down before we started design
-
-
 
 const Forms = () => {
 
@@ -22,8 +18,23 @@ const Forms = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(formState);
-    }
+        // console.log(formState);
+        const data = {
+            _id: formState.id,
+            title: formState
+        }
+
+        // const infoData = formState;
+        console.log(data);
+
+        API.addInfo(data)
+            .then(res => {
+                console.log("After Request");
+                console.log(res.data);
+                // console.log(res)
+        })
+        .catch(err => console.log(err));
+    };
 
     // console.log(this.state);
 
