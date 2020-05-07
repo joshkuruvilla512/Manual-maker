@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { setState, useState } from "react";
 import API from "../../utils/API";
 
 import {
@@ -15,25 +15,27 @@ const Forms = () => {
         title: ""
     });
     // console.log(formState);
+    const saveFormTitle = event => {
+        setFormState({ ...formState, title: event.target.value });
+    }
 
-    const handleSubmit = e => {
-        e.preventDefault();
+    const saveTitle = () => {
+        // e.preventDefault();
         // console.log(formState);
         const data = {
-            _id: formState.id,
-            title: formState
-        }
-
-        // const infoData = formState;
+            title: formState.title
+        };
         console.log(data);
-
-        API.addInfo(data)
+        console.log({ saveTitle: data });
+        
+        API.saveMe(data)
             .then(res => {
                 console.log("After Request");
                 console.log(res.data);
-                // console.log(res)
-        })
-        .catch(err => console.log(err));
+            })
+            .catch(err => console.log(err));
+
+      
     };
 
     // console.log(this.state);
@@ -52,10 +54,10 @@ const Forms = () => {
                     type="text"
                     name="success"
                     id="success"   
-                    onChange={e => setFormState(e.target.value)}                                 
+                    onChange={saveFormTitle}                                 
 
                 />
-                <Button color="secondary" size="lg" onClick={handleSubmit}>Button</Button>
+                <Button color="secondary" size="lg" onClick={saveTitle}>Button</Button>
             </FormGroup>
         </>
     );

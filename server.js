@@ -1,31 +1,25 @@
-const express = require("express");
+const express = require('express')
+const mongoose = require('mongoose')
 
-const mongoose = require("mongoose");
-const routes = require("./routes");
-const app = express();
-const PORT = process.env.PORT || 3001;
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/manualmaker', { useNewUrlParser: true })
 
-// Configure body parsing for AJAX requests
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-// Serve up static assets
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+const app = express()
+
+// This transfers body from frontend to backend
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+
+require('./routes/apiRoutes')(app)
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'))
+  const path = require('path')
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
 }
 
-// Add routes, both API and view
-app.use(routes);
-
-// Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/manualmaker",
-  {
-    useCreateIndex: true,
-    useNewUrlParser: true
-  }
-);
-
-// Start the API server
-app.listen(PORT, () =>
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
-);
+const PORT = process.env.PORT || 5000
+app.listen(PORT, function () {
+  console.log(`Now listening on port: ${PORT}`)
+})
