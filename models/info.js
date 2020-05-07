@@ -3,9 +3,7 @@ const Schema = mongoose.Schema;
 
 const infoSchema = new Schema({
     title: {type: String, required: true },
-    subtitle: { type: String },
-    description: { type: String },
-    image: { type: String }
+    
 })
 
 const Info = mongoose.model("Info", infoSchema);

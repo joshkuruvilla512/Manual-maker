@@ -6,7 +6,9 @@ module.exports = function (app) {
 
   app.post("/api/info", async ({ body }, res) => {
     // Create an empty workout object ready for exercises to get put into it
-    const request = await db.Info.create(body)
+    const request = await db.Info.create({
+      title: req.body.title
+    })
     // Send the request back to the front end
     res.send(request)
   });

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { setState, useState } from "react";
 import API from "../../utils/API";
 
 import {
@@ -15,18 +15,22 @@ const Forms = () => {
         title: ""
     });
     // console.log(formState);
+    const helpMe = event => {
+        setFormState({ ...formState, title: event.target.value });
+        
+    }
 
     const handleSubmit = e => {
         e.preventDefault();
         // console.log(formState);
-        const data = {
-            _id: formState.id,
-            title: formState
+        const data = {            
+            title: formState.title
         }
 
         // const infoData = formState;
         console.log(data);
 
+        //Something with the API call or the connection to DB is messing up.
         API.addInfo(data)
             .then(res => {
                 console.log("After Request");
@@ -52,7 +56,7 @@ const Forms = () => {
                     type="text"
                     name="success"
                     id="success"   
-                    onChange={e => setFormState(e.target.value)}                                 
+                    onChange={helpMe}                                 
 
                 />
                 <Button color="secondary" size="lg" onClick={handleSubmit}>Button</Button>
