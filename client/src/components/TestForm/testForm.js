@@ -11,21 +11,15 @@ import {
 
 const Forms = () => {
 
-    const [formState, setFormState] = useState({
-        title: ""
-    });
+    const [formState, setFormState] = useState("");
     // console.log(formState);
-    const helpMe = event => {
-        setFormState({ ...formState, title: event.target.value });
-        
-    }
-
-    const handleSubmit = e => {
+   
+    const handleSubmit = (e) => {
         e.preventDefault();
         // console.log(formState);
-        const data = {            
-            title: formState.title
-        }
+        const data = {
+            title: formState
+        };
 
         // const infoData = formState;
         console.log(data);
@@ -34,10 +28,10 @@ const Forms = () => {
         API.addInfo(data)
             .then(res => {
                 console.log("After Request");
-                console.log(res.data);
+                console.log(res);
                 // console.log(res)
-        })
-        .catch(err => console.log(err));
+            })
+            .catch(err => console.log(err));
     };
 
     // console.log(this.state);
@@ -55,8 +49,8 @@ const Forms = () => {
                 <Input
                     type="text"
                     name="success"
-                    id="success"   
-                    onChange={helpMe}                                 
+                    id="success"
+                    onChange={(event) => setFormState(event.target.value)}
 
                 />
                 <Button color="secondary" size="lg" onClick={handleSubmit}>Button</Button>
