@@ -5,5 +5,12 @@ export default {
   addInfo: function (infoData) {
     console.log(infoData);
     return axios.post("/api/info", infoData);
+  },
+
+  getInfo: function () {
+    console.log("TRYIN");
+    return axios.get("/api/info");
   }
+
+
 };

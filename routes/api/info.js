@@ -20,4 +20,16 @@ module.exports = function (app) {
     }
   });
 
+  app.get("/info", async (req, res) => {
+    console.log("DEBUG INFO");
+    console.log(req);
+
+    try {
+      const request = await db.Info.find()
+      res.send(request)
+    } catch (error) {
+      console.log("DIDN'T WORK" + error);
+    }
+  })
+
 };
