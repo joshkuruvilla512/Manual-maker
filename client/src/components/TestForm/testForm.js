@@ -1,5 +1,10 @@
 import React, { setState, useState } from "react";
 import API from "../../utils/API";
+import fs from "fs";
+import path from "path";
+
+
+
 
 import {
     FormGroup,
@@ -11,6 +16,16 @@ import {
 
 const Forms = () => {
 
+    function writeToFile(filename, data) {
+        return fs.writeFileSync(path.join(process.cwd(), filename), data);
+    }
+
+    function generate() {
+        API.getInfo()
+            .then(res => {
+                console.log(res.data[0].title);
+            })
+    };
     //setting state for the input field.
     const [formState, setFormState] = useState("");
     // console.log(formState);
@@ -23,6 +38,7 @@ const Forms = () => {
             title: formState
         };
 
+
         // const infoData = formState;
         console.log(data);
 
@@ -30,11 +46,15 @@ const Forms = () => {
         API.addInfo(data)
             .then(res => {
                 console.log("After Request");
-                console.log(res);
+                console.log(res.data);
                 // console.log(res)
             })
             .catch(err => console.log(err));
+
+        
     };
+
+        
 
     return (
         <>
@@ -49,6 +69,7 @@ const Forms = () => {
 
                 />
                 <Button color="secondary" size="lg" onClick={handleSubmit}>Button</Button>
+                <Button color="secondary" size="lg" onClick={generate}>Generate</Button>
             </FormGroup>
         </>
     );
