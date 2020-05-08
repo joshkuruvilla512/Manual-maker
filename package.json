@@ -31,9 +31,13 @@
   "dependencies": {
     "@babel/core": "^7.9.6",
     "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "electron": "^8.2.5",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.9.12",
+    "open": "^7.0.3",
+    "puppeteer": "^3.0.4",
     "reactstrap": "^8.4.1"
   }
 }
