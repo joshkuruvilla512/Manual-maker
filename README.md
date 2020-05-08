@@ -4,10 +4,12 @@ A pdf-creator for business purposes.
 
 ## Technologies
 
-MySQL database-- for raw information for manuals? 
-React Front-end
-NodeJS ?
-ExpressJS ?
+<p>MongoDB</p>
+<p>React Front-end</p>
+<p>NodeJS</p>
+<p>ExpressJS</p>
+
+<p>Puppeteer for PDF generation</p>
 
 ### How it works
 
