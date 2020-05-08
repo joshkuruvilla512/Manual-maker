@@ -3,16 +3,15 @@ import React, { Component } from 'react';
 
 class Landing extends Component {
     // state = {  }
-    render() { 
-        return ( 
+    render() {
+        return (
             <div>
-                <h1>Hello World</h1> 
-           
+                This is the landing page.
                 {/* <input>Testing</input> */}
             </div>
-        
+
         );
     }
 }
- 
+
 export default Landing;

@@ -4,12 +4,16 @@ A pdf-creator for business purposes.
 
 ## Technologies
 
-<p>MongoDB</p>
-<p>React Front-end</p>
-<p>NodeJS</p>
-<p>ExpressJS</p>
+MongoDB
 
-<p>Puppeteer for PDF generation</p>
+React Front-end
+  > Chakra-UI Library
+
+NodeJS
+
+ExpressJS
+
+Puppeteer for PDF generation
 
 ### How it works
 
@@ -20,4 +24,4 @@ A pdf-creator for business purposes.
 <img src="./readmeImages/Manual-Maker-Wireframe_optimized.png" width="100%">
 
 ### Authors
-Josh Kuruvilla, Crystal Ly, Brianna McCray
+[Josh Kuruvilla](https://github.com/joshkuruvilla512), [Crystal Ly](https://github.com/cml2377), [Brianna McCray](https://github.com/bwmccray)

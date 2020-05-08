@@ -30,7 +30,11 @@
   },
   "dependencies": {
     "@babel/core": "^7.9.6",
+    "@chakra-ui/core": "^0.7.0",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "axios": "^0.19.2",
+    "emotion-theming": "^10.0.27",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.9.12",
