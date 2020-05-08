@@ -3,11 +3,12 @@ const axios = require("axios");
 
 module.exports = function (app) {
 
-
+  //matches "/api/info"
   app.post("/info", async ({ body }, res) => {
-    console.log("ARE YOU ALIVE")
+    console.log("DEBUG INFO.JS")
+    //checking what we are sending
     console.log(body)
-    // Create an empty workout object ready for exercises to get put into it
+    //try catch => creating a new object for our DB => grabbing this info from front end. find client utils/api folder for axios call
     try {
       const request = await db.Info.create({
         title: body.title
