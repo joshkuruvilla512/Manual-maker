@@ -29,7 +29,7 @@ const Forms = () => {
     //setting state for the input field.
     const [formState, setFormState] = useState("");
     // console.log(formState);
-   
+
     const handleSubmit = (e) => {
         e.preventDefault();
         // console.log(formState);
@@ -59,6 +59,7 @@ const Forms = () => {
     return (
         <>
             <FormGroup className="has-success">
+                <h2>This is the test form page.</h2>
                 <Label for="success" className="control-label">Testing: </Label>
                 <Input
                     type="text"
@@ -70,6 +71,7 @@ const Forms = () => {
                 />
                 <Button color="secondary" size="lg" onClick={handleSubmit}>Button</Button>
                 <Button color="secondary" size="lg" onClick={generate}>Generate</Button>
+
             </FormGroup>
         </>
     );
