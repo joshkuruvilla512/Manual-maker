@@ -11,12 +11,14 @@ import {
 
 const Forms = () => {
 
+    //setting state for the input field.
     const [formState, setFormState] = useState("");
     // console.log(formState);
    
     const handleSubmit = (e) => {
         e.preventDefault();
         // console.log(formState);
+        //data is holding the set up for API.addInfo, it needs to look like this to log correctly. 
         const data = {
             title: formState
         };
@@ -34,14 +36,6 @@ const Forms = () => {
             .catch(err => console.log(err));
     };
 
-    // console.log(this.state);
-
-    // API.saveInfo({
-    //     title: this.title
-    // })
-    // console.log(this.title.target.value);
-
-
     return (
         <>
             <FormGroup className="has-success">
@@ -50,6 +44,7 @@ const Forms = () => {
                     type="text"
                     name="success"
                     id="success"
+                    //changing state like this is easier to manipulate state wise.
                     onChange={(event) => setFormState(event.target.value)}
 
                 />

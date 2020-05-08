@@ -1,5 +1,7 @@
 const db = require("../models");
 
+//creating input in the DB
+
 module.exports = {
     create: function(req, res) {
         db.Info.create(req.body)
