@@ -1,9 +1,11 @@
 import React, { setState, useState } from "react";
 import API from "../../utils/API";
-import {generateHTML} from "../pages/generatePDF/generate1";
+import { generateHTML } from "../pages/generatePDF/generate1";
 // import generateHTML1 from "../pages/generatePDF/generate1";
 // import fs from "fs";
 // import path from "path";
+import jsPDF from "jspdf"
+
 
 import {
     FormGroup,
@@ -22,9 +24,26 @@ const Forms = () => {
         API.getInfo()
             .then(res => {
                 const dbTitle = res.data[0].title;
-                console.log(dbTitle);
-                console.log(generateHTML(dbTitle));
-                
+                // console.log(dbTitle);
+                // console.log(generateHTML(dbTitle));
+                var doc = new jsPDF('p', 'pt');
+
+                //add some text to pdf
+
+                doc.text(20, 20, generateHTML(dbTitle));
+
+                //set the font 
+                doc.setFont("courier");
+
+                //set the dont type
+
+                doc.setFontType('normal');
+
+                // doc.text(20, 30, 'this is the text with courier font');
+
+                //save the doc
+
+                doc.save('generated.pdf');
             })
     };
     //setting state for the input field.
