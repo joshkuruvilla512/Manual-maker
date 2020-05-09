@@ -1,5 +1,5 @@
 
-function generateHTML(data) {
+export const generateHTML = data => {
     console.log("Generate PDF");
     console.log(data);
     return `<!DOCTYPE html>
@@ -17,6 +17,6 @@ function generateHTML(data) {
         <h1> Name: ${data} </h1>
      </body>
   </html>`;
+  
 }
 
-module.exports = generateHTML;
