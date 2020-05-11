@@ -14,8 +14,6 @@ import {
     Button
 } from "reactstrap";
 
-
-
 const Forms = () => {
 
 
