@@ -1,6 +1,6 @@
 import React from 'react';
 // import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import Landing from "../src/components/pages/landing/landing";
 import Forms from "../src/components/TestForm/testForm";
 import Header from "./components/utilityComponents/Header";
