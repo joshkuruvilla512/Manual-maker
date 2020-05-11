@@ -1,9 +1,11 @@
-import React, { memo } from 'react'
+import React, { memo } from 'react';
+import logo from '../images/Manual Maker Logo.png';
 
 export default memo(function Header() {
     return (
         <div>
-            <h1>Manual Maker</h1>
+            <img src={logo} id="manualMakerLogo" alt={"logo"} />
+            <h1 id="headerTitle">Manual Maker Header</h1>
         </div>
     )
 })

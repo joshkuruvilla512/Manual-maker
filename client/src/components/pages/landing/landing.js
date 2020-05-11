@@ -6,7 +6,7 @@ class Landing extends Component {
     render() {
         return (
             <div>
-                This is the landing page.
+                This is the landing page. This will explain the purpose of this site.
                 {/* <input>Testing</input> */}
             </div>
 
