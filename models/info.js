@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const infoSchema = new Schema({
-    title: {type: String, required: true },
+    subCategory: {type: String, required: true },
+    data: {type: String, required: true}
     
 })
 

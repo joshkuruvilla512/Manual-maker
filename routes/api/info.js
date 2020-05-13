@@ -1,6 +1,13 @@
 const db = require("../../models");
 const axios = require("axios");
 
+
+// const infoSchema = new Schema({
+//   subCategory: {type: String, required: true },
+//   data: {type: String, required: true}
+  
+// })
+
 module.exports = function (app) {
 
   //matches "/api/info"

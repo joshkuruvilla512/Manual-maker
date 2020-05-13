@@ -1,4 +1,5 @@
 module.exports = {
     Info: require("./info"),
-    Manual: require("./manuals")
+    Manual: require("./manuals"),
+    Company: require("./companyManual")
 };
