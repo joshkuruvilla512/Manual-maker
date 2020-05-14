@@ -1,5 +1,5 @@
 module.exports = {
-    Info: require("./info"),
-    Manual: require("./manuals"),
-    Company: require("./companyManual")
+    Info: require("./sections"),
+    Manual: require("./manual"),
+    Company: require("./category")
 };

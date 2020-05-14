@@ -1,7 +1,8 @@
 const path = require("path");
 const router = require("express").Router();
-const infoRoutes = require("./info");
-const ManualRoutes = require("./manuals");
+const infoRoutes = require("./section");
+const ManualRoutes = require("./manual");
+const CategoryRoutes = require("./category");
 
 //needed to send the info API calls thru express router
 infoRoutes(router);

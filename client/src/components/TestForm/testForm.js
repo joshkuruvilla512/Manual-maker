@@ -16,8 +16,6 @@ import {
 
 const Forms = () => {
 
-
-
     function generate() {
         API.getInfo()
             .then(res => {
@@ -25,22 +23,14 @@ const Forms = () => {
                 // console.log(dbTitle);
                 // console.log(generateHTML(dbTitle));
                 var doc = new jsPDF('p', 'pt');
-
-                //add some text to pdf
-
+                //add some text to pd
                 doc.text(20, 20, generateHTML(dbTitle));
-
                 //set the font 
                 doc.setFont("courier");
-
                 //set the dont type
-
                 doc.setFontType('normal');
-
                 // doc.text(20, 30, 'this is the text with courier font');
-
                 //save the doc
-
                 doc.save('generated.pdf');
             })
     };
@@ -53,9 +43,9 @@ const Forms = () => {
         // console.log(formState);
         //data is holding the set up for API.addInfo, it needs to look like this to log correctly. 
         const data = {
-            title: formState
+            subCategory: formState,
+            data: ""
         };
-
 
         // const infoData = formState;
         console.log(data);
@@ -68,10 +58,7 @@ const Forms = () => {
                 // console.log(res)
             })
             .catch(err => console.log(err));
-
     };
-
-
 
     return (
         <>
