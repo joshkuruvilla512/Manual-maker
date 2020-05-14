@@ -30,10 +30,10 @@
   },
   "dependencies": {
     "@babel/core": "^7.9.6",
-    "@chakra-ui/core": "^0.7.0",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
     "dotenv": "^8.2.0",
     "electron": "^8.2.5",
     "emotion-theming": "^10.0.27",
@@ -43,6 +43,8 @@
     "node-sass": "^4.14.1",
     "open": "^7.0.3",
     "puppeteer": "^3.0.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "reactstrap": "^8.4.1"
   }
 }
