@@ -7,7 +7,8 @@ A pdf-creator for business purposes.
 MongoDB
 
 React Front-end
-  > Chakra-UI Library
+  > Reactstrap Library
+  > Bootstrap
 
 NodeJS
 
