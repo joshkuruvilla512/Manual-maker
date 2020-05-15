@@ -86,8 +86,8 @@ const Forms = () => {
                     onChange={(event) => setFormState(event.target.value)}
 
                 />
-                <Button color="secondary" size="lg" onClick={handleSubmit}>Button</Button>
-                <Button color="secondary" size="lg" onClick={generate}>Generate</Button>
+                <Button id="buttonButton" color="secondary" size="lg" onClick={handleSubmit}>Button</Button>
+                <Button id="generateButton" color="secondary" size="lg" onClick={generate}>Generate</Button>
 
             </FormGroup>
         </>
