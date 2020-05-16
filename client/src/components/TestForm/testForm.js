@@ -4,15 +4,15 @@ import { generateHTML } from "../pages/generatePDF/generate1";
 // import generateHTML1 from "../pages/generatePDF/generate1";
 // import fs from "fs";
 // import path from "path";
-import jsPDF from "jspdf"
-
-
+import jsPDF from "jspdf";
 import {
     FormGroup,
     Label,
     Input,
     Button
 } from "reactstrap";
+
+import ProgressBar from "../utilityComponents/ProgressBar";
 
 const Forms = () => {
 
@@ -91,7 +91,7 @@ const Forms = () => {
     
 
     return (
-        <>
+        <div>
             <FormGroup className="has-success">
                 <h2>This is the test form page.</h2>
                 <Label for="success" className="control-label">Company Name: </Label>
@@ -112,6 +112,7 @@ const Forms = () => {
                     onChange={(event) => setManualState( {...manualState, category : event.target.value })}
 
                 />
+
                 <Button color="secondary" size="lg" onClick={handleSubmit}>Button</Button>
 
             </FormGroup>
@@ -148,8 +149,14 @@ const Forms = () => {
                 <Button color="secondary" size="lg" onClick={handleSection}>Button</Button>
                 <Button color="secondary" size="lg" onClick={generate}>Generate</Button>
 
+                <Button id="buttonButton" color="secondary" size="lg" onClick={handleSubmit}>Button</Button>
+                <Button id="generateButton" color="secondary" size="lg" onClick={generate}>Generate</Button>
+
+
             </FormGroup>
-        </>
+
+            <ProgressBar />
+        </div>
     );
 
 };

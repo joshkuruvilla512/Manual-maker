@@ -5,7 +5,7 @@ class ProgressBar extends Component {
         return (
             <div>
                 I am a progress bar!
-                <Progress multi>
+                <Progress multi id="progressBar">
                     <Progress bar value="15" />
                     <Progress bar color="success" value="30" />
                     <Progress bar color="info" value="25" />
