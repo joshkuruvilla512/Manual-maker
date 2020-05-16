@@ -43,8 +43,9 @@ const Forms = () => {
         // console.log(formState);
         //data is holding the set up for API.addInfo, it needs to look like this to log correctly. 
         const data = {
-            subCategory: formState,
-            data: ""
+            company_name: formState,
+            category: "IT",
+            sections: []
         };
 
         // const infoData = formState;
