@@ -35,28 +35,34 @@ const Forms = () => {
             })
     };
     //setting state for the input field.
-    const [formState, setFormState] = useState({
+    const [manualState, setManualState] = useState({
         company_name: "",
         category: "",
         sections: []
     });
-    // console.log(formState);
+
+    const [sectionState, setSectionState] = useState({
+        category: "",
+        section: "",
+        data: ""
+    });
+    // console.log(manualState);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // console.log(formState);
+        // console.log(manualState);
         //data is holding the set up for API.addInfo, it needs to look like this to log correctly. 
         const data = {
-            company_name: formState.company_name,
-            category: formState.category,
-            sections: formState.sections
+            company_name: manualState.company_name,
+            category: manualState.category,
+            sections: manualState.sections
         };
 
-        // const infoData = formState;
+        // const infoData = manualState;
         console.log(data);
 
         //Something with the API call or the connection to DB is messing up.
-        API.addInfo(data)
+        API.createManual(data)
             .then(res => {
                 console.log("After Request");
                 console.log(res.data);
@@ -64,6 +70,25 @@ const Forms = () => {
             })
             .catch(err => console.log(err));
     };
+
+    const handleSection = (e) => {
+        e.preventDefault();
+
+        const sectionData = {
+            category: sectionState.category,
+            section: sectionState.section,
+            data: sectionState.data
+        }
+        console.log(sectionData);
+
+        API.createSection(sectionData)
+            .then(res => {
+                console.log("After Request");
+                console.log(res.data);
+            })
+            .catch(err => console.log(err))
+        }
+    
 
     return (
         <>
@@ -75,7 +100,7 @@ const Forms = () => {
                     name="success"
                     id="success"
                     //changing state like this is easier to manipulate state wise.
-                    onChange={(event) => setFormState( {...formState, company_name : event.target.value })}
+                    onChange={(event) => setManualState( {...manualState, company_name : event.target.value })}
 
                 />
                  <Label for="success" className="control-label">Category: </Label>
@@ -84,16 +109,49 @@ const Forms = () => {
                     name="success"
                     id="success"
                     //changing state like this is easier to manipulate state wise.
-                    onChange={(event) => setFormState( {...formState, category : event.target.value })}
+                    onChange={(event) => setManualState( {...manualState, category : event.target.value })}
 
                 />
                 <Button color="secondary" size="lg" onClick={handleSubmit}>Button</Button>
+
+            </FormGroup>
+
+            <FormGroup className="has-success">
+                <h2>This is the test form page.</h2>
+                <Label for="success" className="control-label">Section Category: </Label>
+                <Input
+                    type="text"
+                    name="success"
+                    id="success"
+                    //changing state like this is easier to manipulate state wise.
+                    onChange={(event) => setSectionState( {...sectionState, category : event.target.value })}
+
+                />
+                 <Label for="success" className="control-label">Section Header: </Label>
+                <Input
+                    type="text"
+                    name="success"
+                    id="success"
+                    //changing state like this is easier to manipulate state wise.
+                    onChange={(event) => setSectionState( {...sectionState, section : event.target.value })}
+
+                />
+                  <Label for="success" className="control-label">Data: </Label>
+                <Input
+                    type="text"
+                    name="success"
+                    id="success"
+                    //changing state like this is easier to manipulate state wise.
+                    onChange={(event) => setSectionState( {...sectionState, data : event.target.value })}
+
+                />
+                <Button color="secondary" size="lg" onClick={handleSection}>Button</Button>
                 <Button color="secondary" size="lg" onClick={generate}>Generate</Button>
 
             </FormGroup>
         </>
     );
-};
 
+};
 export default Forms;
 
