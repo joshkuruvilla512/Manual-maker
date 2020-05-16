@@ -2,14 +2,24 @@ import axios from "axios";
 
 //grabbing info front front end and making a call to backend to create
 export default {
-  addInfo: function (infoData) {
-    console.log("ADDINFO");
-    return axios.post("/api/info", infoData);
+  createManual: function (startManual) {
+    console.log("ADD MANUAL");
+    return axios.post("/api/manual", startManual);
   },
 
   getInfo: function () {
-    console.log("GETINFO");
-    return axios.get("/api/info");
+    console.log("GET MANUAL");
+    return axios.get("/api/manual");
+  },
+
+  createSection : function(sectionData) {
+    console.log("Adding Section");
+    return axios.post("/api/section", sectionData);
+  },
+
+  getSection : function() {
+    console.log("Getting Section");
+    return axios.get("/api/section");
   }
 
 
