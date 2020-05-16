@@ -35,7 +35,11 @@ const Forms = () => {
             })
     };
     //setting state for the input field.
-    const [formState, setFormState] = useState("");
+    const [formState, setFormState] = useState({
+        company_name: "",
+        category: "",
+        sections: []
+    });
     // console.log(formState);
 
     const handleSubmit = (e) => {
@@ -43,9 +47,9 @@ const Forms = () => {
         // console.log(formState);
         //data is holding the set up for API.addInfo, it needs to look like this to log correctly. 
         const data = {
-            company_name: formState,
-            category: "IT",
-            sections: []
+            company_name: formState.company_name,
+            category: formState.category,
+            sections: formState.sections
         };
 
         // const infoData = formState;
@@ -65,13 +69,22 @@ const Forms = () => {
         <>
             <FormGroup className="has-success">
                 <h2>This is the test form page.</h2>
-                <Label for="success" className="control-label">Testing: </Label>
+                <Label for="success" className="control-label">Company Name: </Label>
                 <Input
                     type="text"
                     name="success"
                     id="success"
                     //changing state like this is easier to manipulate state wise.
-                    onChange={(event) => setFormState(event.target.value)}
+                    onChange={(event) => setFormState( {...formState, company_name : event.target.value })}
+
+                />
+                 <Label for="success" className="control-label">Category: </Label>
+                <Input
+                    type="text"
+                    name="success"
+                    id="success"
+                    //changing state like this is easier to manipulate state wise.
+                    onChange={(event) => setFormState( {...formState, category : event.target.value })}
 
                 />
                 <Button color="secondary" size="lg" onClick={handleSubmit}>Button</Button>

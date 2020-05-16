@@ -3,9 +3,9 @@ const axios = require("axios");
 
 module.exports = function (app) {
 
-  //matches "/api/info"
-  app.post("/info", async ({ body }, res) => {
-    console.log("DEBUG INFO.JS")
+  //matches "/api/manual"
+  app.post("/manual", async ({ body }, res) => {
+    console.log("Creating manual")
     //checking what we are sending
     console.log(body)
     //try catch => creating a new object for our DB => grabbing this info from front end. find client utils/api folder for axios call
@@ -18,19 +18,19 @@ module.exports = function (app) {
       // Send the request back to the front end
       res.send(request)
     } catch (error) {
-      console.log("LOSER" + error);
+      console.log("Manual.js " + error);
     }
   });
 
-  app.get("/info", async (req, res) => {
-    console.log("DEBUG INFO");
+  app.get("/manual", async (req, res) => {
+    console.log("Getting manual");
     console.log(req);
 
     try {
       const request = await db.Manual.find()
       res.send(request)
     } catch (error) {
-      console.log("DIDN'T WORK" + error);
+      console.log("Manual.js " + error);
     }
   })
 
