@@ -1,5 +1,4 @@
-import React, { Component, useState } from 'react'
-
+import React, { Component, useState } from 'react';
 
 import {
     Collapse,
@@ -16,6 +15,8 @@ import {
     NavbarText
 } from 'reactstrap';
 
+import AboutUs from "../pages/aboutUs/aboutUs";
+
 const MenuNavigation = (props) => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -29,10 +30,10 @@ const MenuNavigation = (props) => {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/components/">Home</NavLink>
+                            <NavLink href="../pages/landing">Home</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">Create</NavLink>
+                            <NavLink href="../TestForm">Create</NavLink>
                         </NavItem>
                         <UncontrolledDropdown nav inNavbar>
                             <DropdownToggle nav caret>
@@ -43,18 +44,18 @@ const MenuNavigation = (props) => {
                                     About Us
                   </DropdownItem>
                                 <DropdownItem>
-                                    Contact Us
+                                    Placeholder
                   </DropdownItem>
                                 <DropdownItem divider />
                                 <DropdownItem>
-                                    How it Works
+                                    Contact Us
                   </DropdownItem>
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </Nav>
                 </Collapse>
             </Navbar>
-        </div>
+        </div >
     );
 }
 
