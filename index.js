@@ -12,7 +12,7 @@ const keys = require('./config/keys');
 // Connect to the Mongo DB
 
 mongoose.connect(
-    keys.MONGODB_URI,
+  keys.MONGOLAB_WHITE_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
