@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon server.js --ignore 'client/*'\" \"npm run client\"",
+    "start:prod": "node index.js",
+    "start:dev": "concurrently \"nodemon index.js --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
@@ -40,12 +40,18 @@
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.9.12",
+    "node": "^14.4.0",
     "node-sass": "^4.14.1",
     "open": "^7.0.3",
     "puppeteer": "^3.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1",
     "reactstrap": "^8.4.1"
+  },
+  "engines": {
+    "node": "14.x",
+    "npm": "6.14.5"
   }
 }
