@@ -15,8 +15,6 @@ import {
     NavbarText
 } from 'reactstrap';
 
-import AboutUs from "../pages/aboutUs/aboutUs";
-
 const MenuNavigation = (props) => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -40,14 +38,14 @@ const MenuNavigation = (props) => {
                                 Options
                 </DropdownToggle>
                             <DropdownMenu right>
-                                <DropdownItem>
+                                <DropdownItem href="../pages/aboutUs">
                                     About Us
-                  </DropdownItem>
+                                </DropdownItem>
                                 <DropdownItem>
                                     Placeholder
                   </DropdownItem>
                                 <DropdownItem divider />
-                                <DropdownItem>
+                                <DropdownItem href="../pages/contactUs">
                                     Contact Us
                   </DropdownItem>
                             </DropdownMenu>
