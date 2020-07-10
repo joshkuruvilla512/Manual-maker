@@ -16,8 +16,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <div>
-          <Header />
           <MenuNavigation />
+          <Header />
 
           <Route exact path="/" component={Landing} />
           <Route path="/pages/landing" component={Landing} />
