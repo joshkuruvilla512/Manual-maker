@@ -15,8 +15,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <div>
-          <Header />
           <MenuNavigation />
+          <Header />
 
           <Route exact path="/" component={Landing} />
           <Route path="/forms" component={Forms} />
