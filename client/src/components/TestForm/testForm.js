@@ -17,24 +17,33 @@ const Forms = () => {
 
 
     const [manualType, setManualType] = useState([]);
+    const [options, setOptions] = useState([])
 
-    const get_info = () => {
+    const get_info = (manualType) => {
         // console.log(manualType)
         API.getInfo(manualType)
             .then(res => {
-                console.log(res.data)
+                setOptions(res.data)
             })
+            .catch((err) => console.log(err))
+
+        console.log(options);
+    }
+    const handleChange = (e) => {
+        setManualType(e.target.id)
+        get_info(e.target.id);
+        setManualType(e.target.id)
     }
 
     return (
         <div>
-            <FormGroup onChange={(e) => setManualType(e.target.id)} check>
+            <FormGroup onChange={(e) => handleChange(e)} check>
                 <Label check>
                     <Input type="radio" name="radio2" id="Steel Erection"/>{' '}
                     Steel Erection            
                 </Label>
             </FormGroup>
-            <FormGroup onChange={(e) => setManualType(e.target.id)} check>
+            <FormGroup onChange={(e) => handleChange(e)} check>
                 <Label check>
                     <Input type="radio" name="radio2" id="Fabricator" />{' '}
                     Fabrication            
@@ -42,7 +51,7 @@ const Forms = () => {
 
 
             </FormGroup>
-            <Button onClick={(e) => get_info(e)} color="secondary" size="lg" >Button</Button>
+            <Button onClick={() => get_info(manualType)} color="secondary" size="lg">Next</Button>
 
         </div>
     );
