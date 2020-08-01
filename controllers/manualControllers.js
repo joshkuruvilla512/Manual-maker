@@ -4,13 +4,13 @@ const db = require("../models");
 
 module.exports = {
     create: function (req, res) {
-        db.Section.create(req.body)
-            .then(dbSection => res.json(dbSection))
+        db.Manual.create(req.body)
+            .then(manualType => res.json(manualType))
             .catch(err => res.status(422).json(err));
     },
-    findById: function (req, res) {
-        db.Section.findById(req.params.id)
-            .then(dbSection => res.json(dbSection))
+    find: function (req, res) {
+        db.Manual.findAll({})
+            .then(manualType => res.json(manualType))
             .catch(err => res.status(422), json(err));
     }
 };

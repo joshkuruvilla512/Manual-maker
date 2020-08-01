@@ -2,13 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const manualSchema = new Schema({
-    company_name: {type: String, required: true },
-    category: {type: String, required: true},
-    sections : [ {
-        type: Schema.Types.ObjectId,
-        ref: "sections"
-    }]
-    
+    manualType: { type: String, required: true },
+    typeLevel: { type: String, required: true },
+    data: { type: String }
+
 })
 
 const Manual = mongoose.model("manual", manualSchema);

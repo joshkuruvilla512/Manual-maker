@@ -7,20 +7,10 @@ export default {
     return axios.post("/api/manual", startManual);
   },
 
-  getInfo: function () {
+  getInfo: function (manualType) {
     console.log("GET MANUAL");
-    return axios.get("/api/manual");
-  },
-
-  createSection : function(sectionData) {
-    console.log("Adding Section");
-    return axios.post("/api/section", sectionData);
-  },
-
-  getSection : function() {
-    console.log("Getting Section");
-    return axios.get("/api/section");
+    console.log(manualType)
+    return axios.get("/api/manual/" + manualType);
   }
-
 
 };
