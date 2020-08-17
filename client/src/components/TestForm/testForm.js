@@ -1,10 +1,11 @@
-import React, { setState, useState } from "react";
+import React, { useState } from "react";
 import API from "../../utils/API";
-import { generateHTML } from "../pages/generatePDF/generate1";
+
+// import { generateHTML } from "../pages/generatePDF/generate1";
 // import generateHTML1 from "../pages/generatePDF/generate1";
 // import fs from "fs";
 // import path from "path";
-import jsPDF from "jspdf";
+// import jsPDF from "jspdf";
 import {
     Button,
     FormGroup,
@@ -13,49 +14,65 @@ import {
 } from "reactstrap";
 
 
+
 const Forms = () => {
 
 
-    const [manualType, setManualType] = useState([]);
+    const [active, setActive] = useState(false)
     const [options, setOptions] = useState([])
 
-    const get_info = (manualType) => {
-        // console.log(manualType)
-        API.getInfo(manualType)
+    const get_info = (e) => {
+        API.getInfo(e.target.id)
             .then(res => {
                 setOptions(res.data)
+                console.log(options)
             })
             .catch((err) => console.log(err))
 
-        console.log(options);
+
     }
     const handleChange = (e) => {
-        setManualType(e.target.id)
-        get_info(e.target.id);
-        setManualType(e.target.id)
+        console.log(options)
+        setActive(true)
+
+
     }
 
+
     return (
-        <div>
-            <FormGroup onChange={(e) => handleChange(e)} check>
+        <div id='container'>
+            <FormGroup onChange={(e) => get_info(e)} check>
                 <Label check>
-                    <Input type="radio" name="radio2" id="Steel Erection"/>{' '}
-                    Steel Erection            
+                    <Input type="radio" name="radio2" id="Steel Erection" />{' '}
+                    Steel Erection
                 </Label>
             </FormGroup>
-            <FormGroup onChange={(e) => handleChange(e)} check>
+            <FormGroup onChange={(e) => get_info(e)} check>
                 <Label check>
                     <Input type="radio" name="radio2" id="Fabricator" />{' '}
-                    Fabrication            
+                    Fabrication
                 </Label>
-
-
             </FormGroup>
-            <Button onClick={() => get_info(manualType)} color="secondary" size="lg">Next</Button>
+            <Button onClick={() => handleChange()} color="secondary" size="lg">Next</Button>
+            {active ? <div>
+                {options.map(option => {
+                    return (
+                        <FormGroup check>
+                            <Label check>
+                                <Input 
+                                    type='radio'
+                                    id={option._id} />{' '}
+                                {option.typeLevel}
+                            </Label>
+                        </FormGroup>
+
+                    )
+                })}
+            </div> : null}
 
         </div>
+
     );
 
 };
 export default Forms;
-
