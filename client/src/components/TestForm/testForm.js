@@ -1,10 +1,10 @@
-import React, { setState, useState } from "react";
+import React, { useState } from "react";
 import API from "../../utils/API";
-import { generateHTML } from "../pages/generatePDF/generate1";
+// import { generateHTML } from "../pages/generatePDF/generate1";
 // import generateHTML1 from "../pages/generatePDF/generate1";
 // import fs from "fs";
 // import path from "path";
-import jsPDF from "jspdf";
+// import jsPDF from "jspdf";
 import {
     Button,
     FormGroup,
