@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "concurrently": "^5.2.0",
     "dotenv": "^8.2.0",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "open": "^7.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
