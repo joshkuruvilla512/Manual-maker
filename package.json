@@ -37,7 +37,7 @@
     "dotenv": "^8.2.0",
     "electron": "^8.2.5",
     "emotion-theming": "^10.0.27",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "if-env": "^1.0.4",
     "mongoose": "^5.9.12",
     "node": "^14.4.0",
